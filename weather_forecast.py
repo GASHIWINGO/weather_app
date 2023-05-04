@@ -138,7 +138,7 @@ class app(Tk):
             maxtemp = tomorrow["day"]["maxtemp_c"]
             max_temp.config(text=f"Максимальная температура {maxtemp}°C")
 
-            #элементы верхнего фрейма становится неактивнымы, элменты нижнего - наоборот
+            #элементы верхнего фрейма становится неактивнымы, элементы нижнего - наоборот
             yes_button.config(state=NORMAL, cursor="hand2")
             no_button.config(state=NORMAL, cursor="hand2")
             text.config(state=NORMAL)
@@ -159,7 +159,7 @@ class app(Tk):
         title_img = PhotoImage(file = 'images/title.jpg')
         self.iconphoto(False, title_img)
         
-        #цвета, использующиеся для фреймов и объектов внутри них
+        #цвета, использующиеся для фонов фреймов и элементов внутри них
         search_cl = '#ADD8E6'
         current_weather_cl = '#D3D3D3'
         weather_3h_cl = 'white'
