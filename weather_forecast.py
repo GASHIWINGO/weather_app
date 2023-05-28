@@ -101,8 +101,8 @@ class app(Tk):
                         windsp_3h.config(text=f"Скорость ветра {windspeed} км/ч", font=("Poppins",20))
                         windgust3h = forecast["gust_kph"]
                         windgust_3h.config(text=f"Порыв ветра {windgust3h} км/ч")
-                        pressure = forecast["pressure_mb"]
-                        pres_3h.config(text=f"Давление {pressure} мм.рт.ст.")
+                        pressure3h = forecast["pressure_mb"]
+                        pres_3h.config(text=f"Давление {pressure3h} мм.рт.ст.")
                         visibility = forecast["vis_km"]
                         vis_3h.config(text=f"Видимость {visibility:.0f} км")
                         humidity = forecast["humidity"]
@@ -135,8 +135,6 @@ class app(Tk):
             descr_tomorrow.config(text=f"{descr3d}")
             windspeed = tomorrow["day"]["maxwind_kph"]
             windsp_tomorrow.config(text=f"Скорость ветра {windspeed} км/ч")
-            pressure = forecast["pressure_mb"]
-            pres_3h.config(text=f"Давление {pressure} мм.рт.ст.")
             visibility = tomorrow["day"]["avgvis_km"]
             vis_tomorrow.config(text=f"Видимость {visibility:.0f} км")
             humidity = tomorrow["day"]["avghumidity"]
@@ -160,7 +158,7 @@ class app(Tk):
             yes_button.grid()
             no_button.grid()
 
-            w = self.winfo_screenwidth() // 2 - 700
+            w = self.winfo_screenwidth() // 2 - 720
             h = self.winfo_screenheight() // 2 - 400
             self.geometry(f"{1450}x{700}+{w}+{h}")
             self.minsize(1450,700)
