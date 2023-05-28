@@ -114,6 +114,16 @@ class app(Tk):
                         break               
             if not found:
                 title_3h.config(text="Нет информации о погоде через 3 часа")
+                temp_3h.config(text="")
+                feels_3h.config(text="")
+                descr_3h.config(text="")
+                windsp_3h.config(text="")
+                windgust_3h.config(text="")
+                pres_3h.config(text="")
+                vis_3h.config(text="")
+                hum_3h.config(text="")
+                rain_3h.config(text="")
+                dewpoint_3h.config(text="")
 
             #получение и вывод прогноза погоды на завтрашний день
             tomorrow = response_wa["forecast"]["forecastday"][1]
