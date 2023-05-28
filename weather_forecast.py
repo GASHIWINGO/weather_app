@@ -160,10 +160,14 @@ class app(Tk):
             yes_button.grid()
             no_button.grid()
 
-            self.geometry(f"{1450}x{700}")
+            w = self.winfo_screenwidth() // 2 - 700
+            h = self.winfo_screenheight() // 2 - 400
+            self.geometry(f"{1450}x{700}+{w}+{h}")
             self.minsize(1450,700)
 
-        self.geometry(f"{1000}x{500}+{280}+{50}")
+        w = self.winfo_screenwidth() // 2 - 500
+        h = self.winfo_screenheight() // 2 - 250
+        self.geometry(f"{1000}x{500}+{w}+{h}")
         self.minsize(1000,500)
         self.title("Прогноз погоды")
         title_img = PhotoImage(file = 'images/title.jpg')
