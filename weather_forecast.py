@@ -82,8 +82,6 @@ class app(Tk):
             forecast_3h = response_wa['forecast']['forecastday'][0]['hour']
             found = False
 
-            windsp_3h.config(text='')
-
             #если не входим в цикл, то выводим сообщение об отсутствии информации
             for forecast in forecast_3h:
                 hour_time = int(forecast['time_epoch'])
