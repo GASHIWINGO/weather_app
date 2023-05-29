@@ -113,11 +113,11 @@ class app(Tk):
                         dewpoint_3h.config(text=f"Точка росы {dewpoint}°C")
                         break               
             if not found:
-                title_3h.config(text="Нет информации о погоде через 3 часа")
+                title_3h.config(text="")
                 temp_3h.config(text="")
                 feels_3h.config(text="")
                 descr_3h.config(text="")
-                windsp_3h.config(text="")
+                windsp_3h.config(text="Нет информации о погоде через 3 часа", font=("Poppins", 30))
                 windgust_3h.config(text="")
                 pres_3h.config(text="")
                 vis_3h.config(text="")
