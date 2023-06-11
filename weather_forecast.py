@@ -48,9 +48,6 @@ class app(Tk):
 
                     city_name = response_wa['location']['name']
                     cur_title.config(text=f"Погода {city_name}")
-
-                    description = response_wa["forecast"]["forecastday"][0]["day"]["condition"]["text"]
-                    cur_descr.config(text=description.title())
                 except:
                     messagebox.showerror('Ошибка!', 'Проверьте название города!')
             except:
