@@ -48,15 +48,17 @@ class app(Tk):
 
                     city_name = response_wa['location']['name']
                     cur_title.config(text=f"Погода {city_name}")
-
-                    description = response_wa["forecast"]["forecastday"][0]["day"]["condition"]["text"]
-                    cur_descr.config(text=description.title())
                 except:
                     messagebox.showerror('Ошибка!', 'Проверьте название города!')
             except:
                 messagebox.showerror('Ошибка!', 'Проверьте подключение к интернету!')
 
             #получение и вывод информации о погоде в настоящее время
+            description = response_wa["current"]["condition"]["text"] 
+            if len(description) >= 32: 
+                cur_descr.config(text=description, font=("Poppins",20)) 
+            else: 
+                cur_descr.config(text=description, font=("Poppins",30)) 
             feels = response_wa['current']['feelslike_c']
             cur_feels.config(text=f'По ощущению {feels}°C')
             humidity = response_wa['current']['humidity']
@@ -95,8 +97,11 @@ class app(Tk):
                         temp_3h.config(text=f"{temp3h}°C")
                         feels3h = forecast["feelslike_c"]
                         feels_3h.config(text=f"По ощущению {feels3h}°C")
-                        descr3h = forecast["condition"]["text"]
-                        descr_3h.config(text=f"{descr3h}")
+                        descr3h = forecast["condition"]["text"] 
+                        if len(descr3h) >= 32: 
+                            descr_3h.config(text=descr3h, font=("Poppins",20)) 
+                        else: 
+                            descr_3h.config(text=descr3h, font=("Poppins",30)) 
                         windspeed = forecast["wind_kph"]
                         windsp_3h.config(text=f"Скорость ветра {windspeed} км/ч", font=("Poppins",20))
                         windgust3h = forecast["gust_kph"]
@@ -131,8 +136,11 @@ class app(Tk):
             title_tomorrow.config(text="Погода завтра")
             temp3d = tomorrow["day"]["avgtemp_c"]
             temp_tomorrow.config(text=f"{temp3d}°C")
-            descr3d = tomorrow["day"]["condition"]["text"]
-            descr_tomorrow.config(text=f"{descr3d}")
+            descr3d = tomorrow["day"]["condition"]["text"] 
+            if len(descr3d) >= 32: 
+                descr_tomorrow.config(text=descr3d, font=("Poppins",20)) 
+            else: 
+                descr_tomorrow.config(text=descr3d, font=("Poppins",30)) 
             windspeed = tomorrow["day"]["maxwind_kph"]
             windsp_tomorrow.config(text=f"Скорость ветра {windspeed} км/ч")
             visibility = tomorrow["day"]["avgvis_km"]
