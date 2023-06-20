@@ -176,8 +176,6 @@ class app(Tk):
         self.geometry(f"{1000}x{500}+{w}+{h}")
         self.minsize(1000,500)
         self.title("Прогноз погоды")
-        title_img = PhotoImage(file = 'images/title.jpg')
-        self.iconphoto(False, title_img)
         
         #цвета, использующиеся для фонов фреймов и элементов внутри них
         search_cl = '#ADD8E6'
